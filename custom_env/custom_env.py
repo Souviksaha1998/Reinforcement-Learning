@@ -2,6 +2,10 @@ import pygame
 import numpy as np
 import math
 from collections import deque
+
+
+
+
 #initializing pygame
 pygame.init()
 
@@ -11,6 +15,10 @@ running = True
 sship = pygame.image.load('spaceship.png')
 alien = pygame.image.load('alien.png')
 bullet = pygame.image.load('bullet (1).png')
+space = pygame.image.load('6560061.jpg')
+
+
+
 score = 0
 store_pos = []
 font = pygame.font.Font(None, 36)
@@ -62,6 +70,7 @@ clock = pygame.time.Clock()
 
 while running:
     screen.fill((0,0,0))
+    screen.blit(space,(0,0))
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -74,7 +83,6 @@ while running:
                 sship_x += 20
                 
             if event.key == pygame.K_SPACE:
-            
                 types = 'Fire'
                 
         if event.type == pygame.KEYUP:

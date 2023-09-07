@@ -70,6 +70,7 @@ for _ in range(MIN_REPLAY_SIZE):
     action = env.action_space.sample()
   
     new_obs , reward , done , *additional_values = env.step(action)
+    # print(f'reward')
     transition = (obs,action,reward,done,new_obs)
     replay_buffer.append(transition)
     obs = new_obs
